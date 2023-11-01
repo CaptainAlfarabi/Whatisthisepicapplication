@@ -2,8 +2,18 @@ import time
 import random
 
 print("\n")
-print("Welcome to this epic 'program'! I made this to use my progress so far and practice. I don't know how long I'll "
-      "be working on this for but it's really fun so far. \n10/31/2023  \n \n")
+
+while True:
+    Show_Description_And_Logs = input("Would you like to see the program description and logs? Yes/No \n")
+    if Show_Description_And_Logs.lower() == "yes":
+        print("\n Welcome to this epic 'program'! I made this to use my progress so far and practice. I don't know how "
+              "long I'll be working on this for but it's really fun so far. \n10/31/2023  \n \n")
+        break
+    elif Show_Description_And_Logs.lower() == "no":
+        print("\n")
+        break
+    else:
+        print("Invalid selection. Please type out 'yes' or 'no'")
 
 time.sleep(0.5)
 
@@ -24,7 +34,8 @@ time.sleep(0.5)
 
 while True:
     Tool_selection = input("What would you like to do? Select number or type out the phrase. \n" "1.) Make a "
-                           "countdown \n" "2.) Select a random number \n" "3.) Add numbers \n")
+                           "countdown \n" "2.) Select a random number \n" "3.) Add numbers \n" "4.) Multiply 2 "
+                           "numbers \n")
 
     if Tool_selection.lower() == "make a countdown" or Tool_selection == "1":
         while True:
@@ -69,6 +80,21 @@ while True:
                 break
             except ValueError:
                 print("Invalid input. Please use correct formatting. \n")
+
+    elif Tool_selection.lower() == "multiply 2 numbers" or Tool_selection == "4":
+        while True:
+            try:
+                Multiplication_Number_Selection_1 = int(input("Type one number you would like to multiply. \n"))
+                Multiplication_Number_Selection_2 = int(input("Type what you would like to multiple that number by.\n"))
+                Result = Multiplication_Number_Selection_1 * Multiplication_Number_Selection_2
+                print("Your result is " + str(Result) + ".")
+                break
+            except ValueError as e:
+                print(e)
+                print("Invalid input. Please enter valid integers.")
+            except Exception as e:
+                print(e)
+                print("Something went wrong! Did you input your values correctly?")
 
     else:
         print("Please select an option.")
