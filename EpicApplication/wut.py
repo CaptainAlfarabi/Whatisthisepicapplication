@@ -35,7 +35,7 @@ time.sleep(0.5)
 while True:
     Tool_selection = input("What would you like to do? Select number or type out the phrase. \n" "1.) Make a "
                            "countdown \n" "2.) Select a random number \n" "3.) Add numbers \n" "4.) Multiply 2 "
-                           "numbers \n")
+                           "numbers \n" "5.) Divide 2 numbers \n")
 
     if Tool_selection.lower() == "make a countdown" or Tool_selection == "1":
         while True:
@@ -87,6 +87,22 @@ while True:
                 Multiplication_Number_Selection_1 = int(input("Type one number you would like to multiply. \n"))
                 Multiplication_Number_Selection_2 = int(input("Type what you would like to multiple that number by.\n"))
                 Result = Multiplication_Number_Selection_1 * Multiplication_Number_Selection_2
+                print("Your result is " + str(Result) + ".")
+                break
+            except ValueError as e:
+                print(e)
+                print("Invalid input. Please enter valid integers.")
+            except Exception as e:
+                print(e)
+                print("Something went wrong! Did you input your values correctly?")
+
+    elif Tool_selection.lower() == "divide 2 numbers" or Tool_selection.lower() == "5":
+        while True:
+            try:
+                Division_Number_Selection_1 = int(input("Type one number you would like to divide. \n"))
+                Division_Number_Selection_2 = int(input("Type the number you would like to divide selected number by. "
+                                                        "\n"))
+                Result = Division_Number_Selection_1 / Division_Number_Selection_2
                 print("Your result is " + str(Result) + ".")
                 break
             except ValueError as e:
