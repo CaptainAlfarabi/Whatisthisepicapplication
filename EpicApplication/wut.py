@@ -1,7 +1,9 @@
 import time
 import random
 
-print("Welcome to this epic program! I made this on my free time and might continue updating for a while. \n \n")
+print("\n")
+print("Welcome to this epic 'program'! I made this to use my progress so far and practice. I don't know how long I'll "
+      "be working on this for but it's really fun so far. \n10/31/2023  \n \n")
 
 time.sleep(0.5)
 
@@ -12,7 +14,7 @@ while True:
         print("You have selected the username " + Username + ".")
         break
     else:
-        print("Invalid username. Please select one of the provided usernames.")
+        print("Invalid username. Please select one of the provided usernames. [Case and character sensitive]")
 
 time.sleep(0.5)
 
@@ -22,7 +24,7 @@ time.sleep(0.5)
 
 while True:
     Tool_selection = input("What would you like to do? Select number or type out the phrase. \n" "1.) Make a "
-                           "countdown \n" "2.) Select a random number \n")
+                           "countdown \n" "2.) Select a random number \n" "3.) Add numbers \n")
 
     if Tool_selection.lower() == "make a countdown" or Tool_selection == "1":
         while True:
@@ -55,6 +57,18 @@ while True:
                         print("Invalid range. The first number should be less than or equal to the second number.")
                 except ValueError:
                     print("Invalid input. Please enter two numbers or 'Dice'.")
+
+    elif Tool_selection.lower() == "add numbers" or Tool_selection == "3":
+        while True:
+            Number_Addition_Selection = input("Type the numbers you would like to add in the following format: a b c. "
+                                              "This will result to the numbers being added as a + b + c. \n")
+            try:
+                numbers = [float(num) for num in Number_Addition_Selection.split()]
+                result = sum(numbers)
+                print(f"The sum of the numbers provided is {result}")
+                break
+            except ValueError:
+                print("Invalid input. Please use correct formatting. \n")
 
     else:
         print("Please select an option.")
