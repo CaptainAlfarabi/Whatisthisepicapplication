@@ -11,9 +11,11 @@ print("----------------------------------------")
 while True:
     Show_Description_And_Logs = input("Would you like to see the program description and logs? Yes/No \n")
     if Show_Description_And_Logs.lower() == "yes":
-        print("\n Welcome to this epic 'program'! I made this to use my progress so far and practice. I don't know how "
+        print("\nWelcome to this epic 'program'! I made this to use my progress so far and practice. I don't know how "
               "long I'll be working on this for but it's really fun so far. \n10/31/2023  \nI added my first game! "
-              "Rock paper scissors is now available via. option 6.\n11/3/2023\n\n")
+              "Rock paper scissors is now available via. option 6.\n11/3/2023\n" "After adding a few enhancements "
+              "yesterday, I'm going ot be leaving this project as it is. I made a ton of progress by working on "
+              "this! \n11/4/2023 " "\n\n")
         break
     elif Show_Description_And_Logs.lower() == "no":
         print("\n")
