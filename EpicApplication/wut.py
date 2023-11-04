@@ -3,6 +3,11 @@ import random
 
 print("\n")
 
+print("╔═════════════════《✧》═════════════════╗")
+print(" WELCOME TO EPIC APPLICATION VERSION 1.0")
+print("╚═════════════════《✧》═════════════════╝")
+
+
 while True:
     Show_Description_And_Logs = input("Would you like to see the program description and logs? Yes/No \n")
     if Show_Description_And_Logs.lower() == "yes":
