@@ -27,14 +27,16 @@ while True:
     Username = input("Please select one of the following usernames: Red, Gary, Blue, Ash \n")
 
     if Username in ["Red", "Gary", "Blue", "Ash"]:
-        print("You have selected the username " + Username + ".")
+        time.sleep(0.5)
+        print("You have selected the username " + Username + ".\n")
         break
     else:
-        print("Invalid username. Please select one of the provided usernames. [Case and character sensitive]")
+        time.sleep(0.5)
+        print("Invalid username. Please select one of the provided usernames. [Case and character sensitive]\n")
 
 time.sleep(0.5)
 
-print("Hello " + Username + "!")
+print("Hello " + Username + "!\n")
 
 time.sleep(0.5)
 
@@ -53,6 +55,7 @@ while True:
                     time.sleep(1)
                 break
             else:
+                time.sleep(0.5)
                 print("Invalid selection. Please choose an integer.")
 
     elif Tool_selection.lower() == "select a random number" or Tool_selection == "2":
@@ -61,18 +64,22 @@ while True:
                                             "e.g., '1 10')\n")
             if Random_Number_Selection.lower() == "dice":
                 random_number = random.randint(1, 6)
-                print(f"Random number: {random_number}")
+                time.sleep(0.5)
+                print(f"Random number: {random_number}\n")
                 break
             else:
                 try:
                     min_range, max_range = map(int, Random_Number_Selection.split())
                     if min_range <= max_range:
                         random_number = random.randint(min_range, max_range)
-                        print(f"Random number: {random_number}")
+                        time.sleep(0.5)
+                        print(f"Random number: {random_number}\n")
                         break
                     else:
+                        time.sleep(0.5)
                         print("Invalid range. The first number should be less than or equal to the second number.")
                 except ValueError:
+                    time.sleep(0.5)
                     print("Invalid input. Please enter two numbers or 'Dice'.")
 
     elif Tool_selection.lower() == "add numbers" or Tool_selection == "3":
@@ -82,9 +89,11 @@ while True:
             try:
                 numbers = [float(num) for num in Number_Addition_Selection.split()]
                 result = sum(numbers)
-                print(f"The sum of the numbers provided is {result}")
+                time.sleep(0.5)
+                print(f"The sum of the numbers provided is {result}\n")
                 break
             except ValueError:
+                time.sleep(0.5)
                 print("Invalid input. Please use correct formatting. \n")
 
     elif Tool_selection.lower() == "multiply 2 numbers" or Tool_selection == "4":
@@ -93,14 +102,17 @@ while True:
                 Multiplication_Number_Selection_1 = int(input("Type one number you would like to multiply. \n"))
                 Multiplication_Number_Selection_2 = int(input("Type what you would like to multiple that number by.\n"))
                 Result = Multiplication_Number_Selection_1 * Multiplication_Number_Selection_2
-                print("Your result is " + str(Result) + ".")
+                time.sleep(0.5)
+                print("Your result is " + str(Result) + ".\n")
                 break
             except ValueError as e:
+                time.sleep(0.5)
                 print(e)
-                print("Invalid input. Please enter valid integers.")
+                print("Invalid input. Please enter valid integers.\n")
             except Exception as e:
+                time.sleep(0.5)
                 print(e)
-                print("Something went wrong! Did you input your values correctly?")
+                print("Something went wrong! Did you input your values correctly?\n")
 
     elif Tool_selection.lower() == "divide 2 numbers" or Tool_selection == "5":
         while True:
@@ -109,14 +121,17 @@ while True:
                 Division_Number_Selection_2 = int(input("Type the number you would like to divide selected number by. "
                                                         "\n"))
                 Result = Division_Number_Selection_1 / Division_Number_Selection_2
-                print("Your result is " + str(Result) + ".")
+                time.sleep(0.5)
+                print("Your result is " + str(Result) + ".\n")
                 break
             except ValueError as e:
+                time.sleep(0.5)
                 print(e)
-                print("Invalid input. Please enter valid integers.")
+                print("Invalid input. Please enter valid integers.\n")
             except Exception as e:
+                time.sleep(0.5)
                 print(e)
-                print("Something went wrong! Did you input your values correctly?")
+                print("Something went wrong! Did you input your values correctly?\n")
 
     elif Tool_selection.lower() == "play rock paper scissors against computer" or Tool_selection == "6":
         print("Input your selection of rock, paper, or scissors. The computer will instantaneously select an option.\n")
@@ -127,30 +142,50 @@ while True:
             while player not in choices:
                 player = input("Select rock, paper, or scissors.\n").lower()
             if player == computer:
+                time.sleep(0.5)
                 print("Computer chose: " + computer + "\n" "You chose: " + player + "\n")
+                time.sleep(0.5)
                 print("Tie Game.\n")
             elif player == "rock":
                 if computer == "paper":
+                    time.sleep(0.5)
                     print("Computer chose: " + computer + "\n" "You chose: " + player + "\n")
+                    time.sleep(0.5)
                     print("You lost. \n")
                 if computer == "scissors":
+                    time.sleep(0.5)
                     print("Computer chose: " + computer + "\n" "You chose: " + player + "\n")
+                    time.sleep(0.5)
                     print("You won. \n")
             elif player == "paper":
                 if computer == "scissors":
+                    time.sleep(0.5)
                     print("Computer chose: " + computer + "\n" "You chose: " + player + "\n")
+                    time.sleep(0.5)
                     print("You lost. \n")
                 if computer == "rock":
+                    time.sleep(0.5)
                     print("Computer chose: " + computer + "\n" "You chose: " + player + "\n")
+                    time.sleep(0.5)
                     print("You won. \n")
             elif player == "scissors":
                 if computer == "rock":
+                    time.sleep(0.5)
                     print("Computer chose: " + computer + "\n" "You chose: " + player + "\n")
+                    time.sleep(0.5)
                     print("You lost. \n")
                 if computer == "paper":
+                    time.sleep(0.5)
                     print("Computer chose: " + computer + "\n" "You chose: " + player + "\n")
+                    time.sleep(0.5)
                     print("You won. \n")
-            break
+            play_rps_again = input("Would you like to play Rock Paper Scissors again?(Yes/No)\n")
+            if play_rps_again.lower() == "no":
+                print("\n")
+                break
+            elif play_rps_again.lower() != "yes":
+                print("Invalid option.\n")
+                break
 
     else:
         print("Please select an option.")
