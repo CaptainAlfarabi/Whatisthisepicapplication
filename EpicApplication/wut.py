@@ -7,7 +7,8 @@ while True:
     Show_Description_And_Logs = input("Would you like to see the program description and logs? Yes/No \n")
     if Show_Description_And_Logs.lower() == "yes":
         print("\n Welcome to this epic 'program'! I made this to use my progress so far and practice. I don't know how "
-              "long I'll be working on this for but it's really fun so far. \n10/31/2023  \n \n")
+              "long I'll be working on this for but it's really fun so far. \n10/31/2023  \nI added my first game! "
+              "Rock paper scissors is now available via. option 6.\n11/3/2023\n\n")
         break
     elif Show_Description_And_Logs.lower() == "no":
         print("\n")
@@ -35,7 +36,7 @@ time.sleep(0.5)
 while True:
     Tool_selection = input("What would you like to do? Select number or type out the phrase. \n" "1.) Make a "
                            "countdown \n" "2.) Select a random number \n" "3.) Add numbers \n" "4.) Multiply 2 "
-                           "numbers \n" "5.) Divide 2 numbers \n")
+                           "numbers \n" "5.) Divide 2 numbers \n" "6.) Play Rock Paper Scissors against Computer \n")
 
     if Tool_selection.lower() == "make a countdown" or Tool_selection == "1":
         while True:
@@ -96,7 +97,7 @@ while True:
                 print(e)
                 print("Something went wrong! Did you input your values correctly?")
 
-    elif Tool_selection.lower() == "divide 2 numbers" or Tool_selection.lower() == "5":
+    elif Tool_selection.lower() == "divide 2 numbers" or Tool_selection == "5":
         while True:
             try:
                 Division_Number_Selection_1 = int(input("Type one number you would like to divide. \n"))
@@ -111,6 +112,40 @@ while True:
             except Exception as e:
                 print(e)
                 print("Something went wrong! Did you input your values correctly?")
+
+    elif Tool_selection.lower() == "play rock paper scissors against computer" or Tool_selection == "6":
+        print("Input your selection of rock, paper, or scissors. The computer will instantaneously select an option.\n")
+        while True:
+            choices = ["rock", "paper", "scissors"]
+            computer = random.choice(choices)
+            player = None
+            while player not in choices:
+                player = input("Select rock, paper, or scissors.\n").lower()
+            if player == computer:
+                print("Computer chose: " + computer + "\n" "You chose: " + player + "\n")
+                print("Tie Game.\n")
+            elif player == "rock":
+                if computer == "paper":
+                    print("Computer chose: " + computer + "\n" "You chose: " + player + "\n")
+                    print("You lost. \n")
+                if computer == "scissors":
+                    print("Computer chose: " + computer + "\n" "You chose: " + player + "\n")
+                    print("You won. \n")
+            elif player == "paper":
+                if computer == "scissors":
+                    print("Computer chose: " + computer + "\n" "You chose: " + player + "\n")
+                    print("You lost. \n")
+                if computer == "rock":
+                    print("Computer chose: " + computer + "\n" "You chose: " + player + "\n")
+                    print("You won. \n")
+            elif player == "scissors":
+                if computer == "rock":
+                    print("Computer chose: " + computer + "\n" "You chose: " + player + "\n")
+                    print("You lost. \n")
+                if computer == "paper":
+                    print("Computer chose: " + computer + "\n" "You chose: " + player + "\n")
+                    print("You won. \n")
+            break
 
     else:
         print("Please select an option.")
